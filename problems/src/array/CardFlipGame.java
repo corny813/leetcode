@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * Problem: Find the smallest good number.
+ * Changed by wujunjie on 14/05/2018
+ * 
  * Created by gouthamvidyapradhan on 04/05/2018.
  *
  * On a table are N cards, with a positive integer printed on the front and back of each card (possibly different).
@@ -34,7 +37,7 @@ import java.util.List;
  1 <= backs[i] <= 2000.
 
  */
-public class CardFilipGame {
+public class CardFlipGame {
 
     public static void main(String[] args) {
 
@@ -47,6 +50,7 @@ public class CardFilipGame {
             numbers.add(backs[i]);
         }
         Collections.sort(numbers);
+        
         for(int n : numbers){
             boolean success = true;
             for(int i = 0; i < fronts.length; i ++){

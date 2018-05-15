@@ -1,11 +1,16 @@
 package array;
 
 /**
+ * Problem: Count the number of battleships. Battleships are represented with 'X's (1*N or N*1). No adjacent battleships
+ * Changed by wujunjie on 14/05/2018
+ * 
  * Created by gouthamvidyapradhan on 12/08/2017.
- * Given an 2D board, count how many battleships are in it. The battleships are represented with 'X's, empty slots are represented with '.'s. You may assume the following rules:
+ * Given an 2D board, count how many battleships are in it. The battleships are represented with 'X's, 
+ * empty slots are represented with '.'s. You may assume the following rules:
  * <p>
  * You receive a valid board, made of only battleships or empty slots.
- * Battleships can only be placed horizontally or vertically. In other words, they can only be made of the shape 1xN (1 row, N columns) or Nx1 (N rows, 1 column), where N can be of any size.
+ * Battleships can only be placed horizontally or vertically. In other words, 
+ * they can only be made of the shape 1xN (1 row, N columns) or Nx1 (N rows, 1 column), where N can be of any size.
  * At least one horizontal or vertical cell separates between two battleships - there are no adjacent battleships.
  * Example:
  * X..X
@@ -40,15 +45,15 @@ public class BattleshipsInABoard {
 
     public int countBattleships(char[][] board) {
         int count = 0;
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[0].length; j++) {
+        for (int i = 0; i < board.length; i++) {//move down
+            for (int j = 0; j < board[0].length; j++) {//move right
                 if (board[i][j] == 'X') {
                     if (i - 1 >= 0) { //check for the boundary condition
-                        if (board[i - 1][j] == 'X')
+                        if (board[i - 1][j] == 'X')//check up
                             continue;
                     }
                     if (j - 1 >= 0) {
-                        if (board[i][j - 1] == 'X') {
+                        if (board[i][j - 1] == 'X') {//check left
                             continue;
                         }
                     }
