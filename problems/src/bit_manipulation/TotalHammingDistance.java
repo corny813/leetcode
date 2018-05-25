@@ -1,6 +1,9 @@
 package bit_manipulation;
 
 /**
+ * Problem: sum of hammingDistance
+ * Changed by wujunjie on 25/05/2018
+ * 
  * Created by gouthamvidyapradhan on 01/12/2017.
  * The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
 
@@ -28,7 +31,7 @@ public class TotalHammingDistance {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception{
-        int[] A = {1000000000, 4, 14, 2};
+        int[] A = { 4, 14, 2};
         System.out.println(new TotalHammingDistance().totalHammingDistance(A));
     }
 
@@ -42,7 +45,15 @@ public class TotalHammingDistance {
                     numOfOnes++;
                 }
             }
-            sum += ((nums.length - numOfOnes) * numOfOnes);
+//            System.out.println("sum , numOfOnes: "+sum+"\t"+numOfOnes);
+            sum += ((nums.length - numOfOnes) * numOfOnes);// num of 0 * num of 1
+            /*
+             * 1
+             *     0
+             * 1       distance: 3*2=6  
+             *     0
+             * 1
+             */
         }
         return sum;
     }

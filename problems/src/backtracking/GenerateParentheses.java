@@ -32,10 +32,14 @@ public class GenerateParentheses {
         if (str.length() == n * 2) {
             list.add(str);
         } else {
-            if (open < n)
-                backTrack(list, str.concat("("), open + 1, close, n);
-            if (close < open) //number of close should be less than open or else it can result in unbalanced parentheses
-                backTrack(list, str.concat(")"), open, close + 1, n);
+            if (open < n) {
+            	System.out.println("open£º"+open+" close:"+close);
+            	backTrack(list, str.concat("("), open + 1, close, n);
+            }
+            if (close < open) {//number of close should be less than open or else it can result in unbalanced parentheses
+            	System.out.println("close:"+close+" open:"+open);
+            	backTrack(list, str.concat(")"), open, close + 1, n);
+            }
         }
     }
 }

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Problem: print n bit gray code
+ * Changed by wujunjie on 24/05/2018
+ * 
  * Created by gouthamvidyapradhan on 16/03/2017.
  * The gray code is a binary numeral system where two successive values differ in only one bit.
  * <p>
@@ -36,8 +39,11 @@ public class GrayCode {
 
     public List<Integer> grayCode(int n) {
         List<Integer> result = new ArrayList<>();
-        for (int i = 0; i <= ((1 << n) - 1); i++)
-            result.add(i ^ (i >> 1));
+        int tmp = (1<<n) - 1;//left move n bit for 1; tmp=2^n-1;
+        for (int i = 0; i <= tmp; i++) {
+        	System.out.println(n+" "+i+" "+(i^(i>>1)));
+        	result.add(i ^ (i >> 1));
+        }
         return result;
     }
 }

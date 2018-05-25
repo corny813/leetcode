@@ -3,12 +3,15 @@ package array;
 import java.util.Arrays;
 
 /**
+ * Problem: Find 3 increasing subsequence
+ * Changed by wujunjie on 15/05/2018
+ * 
  * Created by gouthamvidyapradhan on 17/12/2017.
  * Given an unsorted array return whether an increasing subsequence of length 3 exists or not in the array.
 
  Formally the function should:
  Return true if there exists i, j, k
- such that arr[i] < arr[j] < arr[k] given 0 ≤ i < j < k ≤ n-1 else return false.
+ such that arr[i] < arr[j] < arr[k] given 0 <=i < j < k <= n-1 else return false.
  Your algorithm should run in O(n) time complexity and O(1) space complexity.
 
  Examples:
@@ -26,13 +29,16 @@ public class IncreasingTripletSubsequence {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception{
-        int[] A = {1, 2, 3, 4, 5};
+//        int[] A = {1, 2, 3, 4, 5};
+    	int[] A = {4, 1, 3, 2, 4};
         System.out.println(new IncreasingTripletSubsequence().increasingTriplet(A));
     }
 
     public boolean increasingTriplet(int[] nums) {
-        int[] A = new int[3];
-        Arrays.fill(A, Integer.MAX_VALUE);
+//        int[] A = new int[3];
+//        Arrays.fill(A, Integer.MAX_VALUE);
+    	int[] A = {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE};
+    	
         for (int num : nums) {
             if (num < A[0]) {
                 A[0] = num;

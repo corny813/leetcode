@@ -1,5 +1,8 @@
 package array;
 /**
+ * Problem: Design a image smoother to average the cell
+ * Changed by wujunjie on 15/05/2018
+ * 
  * Created by gouthamvidyapradhan on 17/02/2018.
  *  * Given a 2D integer matrix M representing the gray scale of an image, you need to design a smoother to make the
  * gray scale of each cell becomes the average gray scale (rounding down) of all the 8 surrounding cells and itself.
@@ -29,6 +32,14 @@ public class ImageSmoother {
     int[] C = {0, 0, -1, 1, 1, 1, -1, -1};
     public static void main(String[] args) throws Exception{
 
+    	int[][] tmp = {{2,3,4},{5,6,7},{8,9,10},{11,12,13},{14,15,16}};
+    	int[][] res = new ImageSmoother().imageSmoother(tmp);
+    	for(int i = 0; i < res.length; i++) {
+    		for(int j = 0; j < res[0].length; j++) {
+    			System.out.print(" "+res[i][j]+" ");
+    		}
+    		System.out.println();
+    	}
     }
 
     public int[][] imageSmoother(int[][] M) {
@@ -47,7 +58,8 @@ public class ImageSmoother {
                         totalCount++;
                     }
                 }
-                if(M[i][j] == 1) numCount++;
+//                if(M[i][j] == 1) numCount++;
+                numCount += M[i][j];
                 result[i][j] = numCount / totalCount;
             }
         }
