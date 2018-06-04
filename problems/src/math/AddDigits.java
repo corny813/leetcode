@@ -1,6 +1,8 @@
 package math;
 
 /**
+ * Changed by wujunjie on 28/05/2018
+ * 
  * Created by gouthamvidyapradhan on 02/08/2017.
  * Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.
  * <p>
@@ -17,7 +19,7 @@ public class AddDigits {
         System.out.println(new AddDigits().addDigits(38));
     }
 
-    public int addDigits(int num) {
+    public int addDigits(int num) {//num = 9*(something) + remain; abc=100a+10b+c=a+b+c+(99a+9b)
         if (num == 0) return 0;
         return num % 9 == 0 ? 9 : num % 9;
     }

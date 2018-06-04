@@ -1,6 +1,8 @@
 package math;
 
 /**
+ * Changed by wujunjie on 29/05/2018
+ * 
  * Created by gouthamvidyapradhan on 12/08/2017.
  * Given a positive integer, return its corresponding column title as appear in an Excel sheet.
  * <p>
@@ -25,7 +27,7 @@ public class ExcelSheetColumnTitle {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        System.out.println(new ExcelSheetColumnTitle().convertToTitle(52));
+        System.out.println(new ExcelSheetColumnTitle().convertToTitle(27));
     }
 
 

@@ -1,6 +1,8 @@
 package math;
 
 /**
+ * Changed by wujunjie on 04/06/2018
+ * 
  * Created by gouthamvidyapradhan on 18/03/2017.
  * Given an array of integers A and let n to be its length.
  * <p>
@@ -45,9 +47,12 @@ public class RotateFunction {
             prodSum += (A[i] * i);
             sum += A[i];
         }
-        max = Math.max(max, prodSum);
-        for (int i = 0; i < l - 1; i++) {
-            prodSum = (prodSum - sum + A[i] + ((l - 1) * A[i]));
+//        max = Math.max(max, prodSum);
+        
+        for (int i = 0; i < l; i++) {
+        	System.out.println(prodSum);
+//            prodSum = (prodSum - sum + A[i] + ((l - 1) * A[i]));
+        	prodSum = prodSum - sum + l*A[i];
             max = Math.max(max, prodSum);
         }
         return max;
